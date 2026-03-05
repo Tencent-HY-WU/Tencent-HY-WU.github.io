@@ -1,6 +1,6 @@
 # Site Settings
-title                    : "Real-Time Video Generation with Pyramid Attention Broadcast"
-description              : "Real-Time Video Generation with Pyramid Attention Broadcast"
+title                    : "HY-WU (Part I): An Extensible Functional Neural Memory Framework and An Instantiation in Text-Guided Image Editing"
+description              : "HY-WU: A scalable framework for on-the-fly conditional generation of low-rank (LoRA) updates in text-guided image editing"
 repository               : "Tencent-HY-WU/Tencent-HY-WU.github.io"
 
 # Reading Files
