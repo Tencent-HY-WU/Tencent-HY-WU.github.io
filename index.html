@@ -31,66 +31,32 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
   <script src="./static/js/magnifier.js"></script>
-  <link href="https://fonts.cdnfonts.com/css/menlo" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/image_card_fader.css">
   <link rel="stylesheet" href="./static/css/image_card_slider.css">
   <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Patrick+Hand|Google+Sans|Noto+Sans|Castoro|Lato|Open+Sans&effect=shadow-multiple|emboss|3d">
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap">
   <link rel="icon" href="./static/images/tencent-hy-wu-logo.svg" type="image/x-icon">
   <link rel="shortcut icon" href="./static/images/tencent-hy-wu-logo.svg" type="image/x-icon">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<style>
-  @import url('https://fonts.cdnfonts.com/css/menlo');
-
-  .video-table td, .video-table th {
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 4px;
-    padding-right: 4px;
-    font-weight: normal;
-  }
-  .first-col {
-    width: 7%;
-    vertical-align: middle;
-  }
-  .other-col {
-    width: 31%;
-  }
-  body {
-    font-family: "Lato", sans-serif;
-    font-size: 1.1em;
-  }
-  .title.is-3 {
-    font-weight: 900;
-    font-size: 2.0rem;
-  }
-  .title.is-4 {
-    font-weight: 700;
-    font-size: 1.7rem;
-  }
-</style>
-
 
 <body>
-  <section class="hero is-small">
+  <section class="hero hero-header">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <br><br>
-          <h1 class="title is-2 publication-title" style="font-size: 2.0rem">
+          <h1 class="title is-2 publication-title">
             HY-WU (Part I): An Extensible Functional Neural Memory Framework and An Instantiation in Text-Guided Image Editing
           </h1>
 
-          <div class="is-size-5 publication-authors">
+          <div class="publication-authors">
             <span class="author-block">Tencent HY Team</span>
           </div>
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
+          <div class="publication-links">
               <span class="link-block">
                 <a href="https://tencent-hy-wu.github.io/" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
@@ -154,7 +120,6 @@
                   <span>BibTex</span>
                 </a>
               </span>
-            </div>
           </div>
         </div>
       </div>
@@ -163,28 +128,113 @@
 </section>
 
 
-<section class="hero is-small">
+<section class="section teaser-section">
   <div class="container is-max-desktop">
     <div class="content has-text-centered">
-      <img src="./static/images/teaser.png" style="width: 100%; max-width: 900px;"><br>
+      <img src="./static/images/teaser.png" class="content-image" style="width: 100%; max-width: 900px;">
+    </div>
+
+    <div class="content has-text-centered" style="margin-top: 2rem;">
+      <p class="abstract-text">
+        We propose <b>HY-WU</b>: a scalable framework for on-the-fly conditional generation of low-rank (LoRA) updates.
+        HY-WU synthesizes instance-conditioned adapter weights from hybrid image–instruction representations and injects them into a frozen backbone during the forward pass, producing instance-specific operators without test-time optimization.
+      </p>
+    </div>
+
+    <div class="content has-text-centered" style="margin-top: 2rem;">
+      <img src="./static/images/animation.gif" class="content-image" style="width: 100%; max-width: 900px;">
     </div>
   </div>
+</section>
 
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="content has-text-justified">
-        <p>
-          We propose <b>HY-WU</b>: a scalable framework for on-the-fly conditional generation of low-rank (LoRA) updates.
-          HY-WU synthesizes instance-conditioned adapter weights from hybrid image–instruction representations and injects them into a frozen backbone during the forward pass, producing instance-specific operators without test-time optimization.
-          <br>
-        </p>
+
+<section class="section section-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Key Features</h2>
+
+    <div class="columns is-multiline">
+      <div class="column is-4">
+        <div class="feature-card">
+          <span class="feature-icon">🧠</span>
+          <h3>Functional Neural Memory</h3>
+          <p>HY-WU introduces a lightweight "neural memory" for AI. It generates conditioned model adapter per request (without finetuning!), enabling instance-level personalization while preserving the base model's general capability.</p>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="feature-card">
+          <span class="feature-icon">🏆</span>
+          <h3>Scalable for Large Models</h3>
+          <p>HY-WU remains practical for large foundation models (even at 80B parameters!). With structured parameter tokenization, the method is naturally compatible with large-scale architectures.</p>
+        </div>
+      </div>
+      <div class="column is-4">
+        <div class="feature-card">
+          <span class="feature-icon">🎨</span>
+          <h3>Strong Human Preference</h3>
+          <p>HY-WU achieves high human preference win-rates against open-source models, exceeds strong closed-source baselines, and remains close to the latest Nano-Banana series.</p>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
+
+<section class="section">
   <div class="container is-max-desktop">
+    <h2 class="title is-3">Showcases</h2>
+
+    <div class="showcase-item">
+      <h3 class="title is-4">Cross-Domain Clothing Fusion</h3>
+      <div class="content has-text-centered">
+        <img src="./static/images/showcase1.png" class="content-image" style="width: 100%;">
+      </div>
+    </div>
+
+    <div class="showcase-item">
+      <h3 class="title is-4">Creative Cosplay and Character Outfit Migration</h3>
+      <div class="content has-text-centered">
+        <img src="./static/images/showcase2.png" class="content-image" style="width: 100%;">
+      </div>
+    </div>
+
+    <div class="showcase-item">
+      <h3 class="title is-4">High-Fidelity Face Identity Transfer</h3>
+      <div class="content has-text-centered">
+        <img src="./static/images/showcase3.png" class="content-image" style="width: 100%;">
+      </div>
+    </div>
+
+    <div class="showcase-item">
+      <h3 class="title is-4">Seamless Outfit Transfer and Virtual Try-on</h3>
+      <div class="content has-text-centered">
+        <img src="./static/images/showcase4.png" class="content-image" style="width: 100%;">
+      </div>
+    </div>
+
+    <div class="showcase-item">
+      <h3 class="title is-4">High-Quality Texture Synthesis</h3>
+      <div class="content has-text-centered">
+        <img src="./static/images/showcase5.png" class="content-image" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section section-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Evaluation</h2>
+    <h3 class="title is-4">GSB (Human Evaluation)</h3>
+    <div class="content has-text-justified">
+      <p>
+        HY-WU substantially outperforms leading open-source models, and remains competitive with top-tier closed-source commercial systems.
+        While Nano Banana 2 and Nano Banana Pro achieve slightly higher overall scores (52.4% and 53.8%, respectively), the margin remains modest.
+        Given that these commercial systems are likely trained with substantially larger-scale backbones and proprietary data, the modest performance gap suggests that our operator-level conditional adaptation remains effective even under more constrained model scale.
+      </p>
+    </div>
     <div class="content has-text-centered">
-      <img src="./static/images/animation.gif" style="width: 100%; max-width: 900px;"><br>
+      <img src="./static/images/gsb.png" class="content-image" style="width: 70%;">
+      <p class="image-caption">Human Evaluation with other models.</p>
     </div>
   </div>
 </section>
@@ -192,105 +242,19 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Key Features</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            <b>🧠 Functional Neural Memory:</b> HY-WU introduces a lightweight "neural memory" for AI. It generates conditioned model adapter per request (without finetuning!), enabling instance-level personalization while preserving the base model's general capability.
-          </p>
-          <p>
-            <b>🏆 Scalable for Large Models:</b> HY-WU remains practical for large foundation models (even at 80B parameters!). With structured parameter tokenization, the method is naturally compatible with large-scale architectures.
-          </p>
-          <p>
-            <b>🎨 Strong Human Preference:</b> HY-WU achieves high human preference win-rates against open-source models, exceeds strong closed-source baselines, and remains close to the latest Nano-Banana series.
-          </p>
-        </div>
-      </div>
+    <h2 class="title is-3">Acknowledgments</h2>
+    <div class="content has-text-justified">
+      <p>
+        We thank the Tencent Hunyuan team for their support. HY-WU is part of the Tencent Hunyuan project.
+      </p>
     </div>
   </div>
 </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Showcases</h2>
-
-        <h2 class="title is-4">Cross-Domain Clothing Fusion</h2>
-        <div class="content has-text-centered">
-          <img src="./static/images/showcase1.png" style="width: 100%;"><br>
-        </div>
-
-        <h2 class="title is-4">Creative Cosplay and Character Outfit Migration</h2>
-        <div class="content has-text-centered">
-          <img src="./static/images/showcase2.png" style="width: 100%;"><br>
-        </div>
-
-        <h2 class="title is-4">High-Fidelity Face Identity Transfer</h2>
-        <div class="content has-text-centered">
-          <img src="./static/images/showcase3.png" style="width: 100%;"><br>
-        </div>
-
-        <h2 class="title is-4">Seamless Outfit Transfer and Virtual Try-on</h2>
-        <div class="content has-text-centered">
-          <img src="./static/images/showcase4.png" style="width: 100%;"><br>
-        </div>
-
-        <h2 class="title is-4">High-Quality Texture Synthesis</h2>
-        <div class="content has-text-centered">
-          <img src="./static/images/showcase5.png" style="width: 100%;"><br>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Evaluation</h2>
-        <h2 class="title is-4">GSB (Human Evaluation)</h2>
-        <div class="content has-text-justified">
-          <p>
-            HY-WU substantially outperforms leading open-source models, and remains competitive with top-tier closed-source commercial systems.
-            While Nano Banana 2 and Nano Banana Pro achieve slightly higher overall scores (52.4% and 53.8%, respectively), the margin remains modest.
-            Given that these commercial systems are likely trained with substantially larger-scale backbones and proprietary data, the modest performance gap suggests that our operator-level conditional adaptation remains effective even under more constrained model scale.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <img src="./static/images/gsb.png" style="width: 70%;"><br>
-          <span style="font-size: 0.8em;">Human Evaluation with other models.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Acknowledgments</h2>
-        <div class="content has-text-justified">
-          <p>
-            We thank the Tencent Hunyuan team for their support. HY-WU is part of the Tencent Hunyuan project.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title"><a id="bibtex">BibTeX</a></h2>
+<section class="section section-light" id="BibTeX">
+  <div class="container is-max-desktop bibtex-box">
+    <h2 class="title is-3"><a id="bibtex" style="color: inherit; text-decoration: none;">BibTeX</a></h2>
     <pre><code>@misc{wu2026hy-wu,
   author = {Tencent HY Team and Mengxuan Wu and Xuanlei Zhao and Ziqiao Wang and Ruichfeng Feng and Atlas Wang and Qinglin Lu and Kai Wang},
   title = {HY-WU (Part I): An Extensible Functional Neural Memory Framework and An Instantiation in Text-Guided Image Editing},
@@ -305,8 +269,9 @@
 
 
 <footer class="footer">
+  <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-8">
+      <div class="column is-8 has-text-centered">
         <div class="content">
           <p>
             This website is licensed under a <a rel="license"
